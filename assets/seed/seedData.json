@@ -1,26 +1,26 @@
-// {
+{
   "users": [
     {
-      "uid": "admin-uid-placeholder",
+      "uid": "admin-uid-placeholder",  // Ganti dengan UID asli dari Firebase Auth
       "displayName": "Admin SMK 3 Manado",
       "email": "admin@smkn3manado.edu",
-      "role": "admin",
+      "role": "admin",  // Role admin
       "active": true,
       "joinedAt": "2023-01-01T00:00:00Z"
     },
     {
-      "uid": "member1-uid-placeholder",
+      "uid": "member1-uid-placeholder",  // Ganti dengan UID asli
       "displayName": "Siswa 1",
       "email": "siswa1@smkn3manado.edu",
-      "role": "member",
+      "role": "member",  // Role member biasa
       "active": true,
       "joinedAt": "2023-02-01T00:00:00Z"
     },
     {
-      "uid": "member2-uid-placeholder",
+      "uid": "member2-uid-placeholder",  // Ganti dengan UID asli
       "displayName": "Siswa 2",
       "email": "siswa2@smkn3manado.edu",
-      "role": "member",
+      "role": "member",  // Role member biasa
       "active": true,
       "joinedAt": "2023-03-01T00:00:00Z"
     }
