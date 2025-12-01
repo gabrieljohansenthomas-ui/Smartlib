@@ -3,8 +3,8 @@ const fs = require('fs');
 
 // Inisialisasi Firebase Admin (gunakan service account key)
 admin.initializeApp({
-  credential: admin.credential.cert('./serviceAccountKey.json'), // Placeholder - download dari Firebase Console
-  databaseURL: 'https://your-project.firebaseio.com' // Placeholder
+  credential: admin.credential.cert('./serviceAccountKey.json'), // Download dari Firebase Console
+  databaseURL: 'https://your-project.firebaseio.com' // Ganti dengan project ID Anda
 });
 
 const db = admin.firestore();
@@ -21,7 +21,7 @@ async function importSeedData() {
       }
     }
   }
-  console.log('Seed data imported successfully.');
+  console.log('Seed data imported successfully, including admin and member users.');
 }
 
 importSeedData().catch(console.error);
