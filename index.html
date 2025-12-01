@@ -11,44 +11,29 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- DOMPurify untuk sanitasi -->
     <script src="https://cdn.jsdelivr.net/npm/dompurify@3"></script>
-    <!-- Font Awesome untuk ikon -->
+    <!-- Font Awesome untuk ikon (opsional, untuk visualisasi) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Custom CSS untuk animasi modern -->
-    <style>
-        .parallax { transform: translateY(0); transition: transform 0.5s ease; }
-        .hover-scale:hover { transform: scale(1.02); transition: transform 0.4s ease; } /* Kurangi scale untuk subtle */
-        .gradient-bg { background: linear-gradient(135deg, #0ea5e9 0%, #ffffff 100%); }
-        /* Glow halus untuk efek modern tanpa berlebihan */
-        .glow-effect:hover { box-shadow: 0 0 15px rgba(14, 165, 233, 0.3); transition: box-shadow 0.4s ease; }
-        /* Background animasi subtle */
-        .animated-bg { background: linear-gradient(45deg, #0ea5e9, #ffffff); background-size: 200% 200%; animation: subtleShift 15s ease infinite; } /* Lambat dan subtle */
-        @keyframes subtleShift { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
-        /* Menu toggle smooth slide */
-        .mobile-menu { transform: translateY(-100%); transition: transform 0.4s ease; }
-        .mobile-menu.open { transform: translateY(0); }
-    </style>
 </head>
-<body class="bg-gray-50 text-gray-900 animated-bg">
-    <!-- Header responsif dengan navigasi (menu toggle diperbaiki dengan slide smooth) -->
-    <header class="bg-blue-600 text-white shadow-lg sticky top-0 z-50 glow-effect">
+<body class="bg-gray-50 text-gray-900">
+    <!-- Header responsif dengan navigasi -->
+    <header class="bg-blue-600 text-white shadow-lg sticky top-0 z-50">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <h1 class="text-2xl font-bold flex items-center">
                 <i class="fas fa-book mr-2"></i> Perpustakaan SMK Negeri 3 Manado
             </h1>
             <nav class="space-x-4 hidden md:flex">
-                <a href="#home" class="hover:text-blue-200 transition duration-300">Beranda</a>
-                <a href="#features" class="hover:text-blue-200 transition duration-300">Fitur</a>
-                <a href="#dashboard" class="hover:text-blue-200 transition duration-300">Dashboard</a>
-                <a href="#about" class="hover:text-blue-200 transition duration-300">Tentang Kami</a>
-                <a href="katalog.html" class="hover:text-blue-200 transition duration-300">Katalog</a>
-                <a href="login.html" class="bg-white text-blue-600 px-4 py-2 rounded-lg hover:bg-gray-100 transition duration-300 shadow-md">Login</a>
+                <a href="#home" class="hover:text-blue-200 transition">Beranda</a>
+                <a href="#features" class="hover:text-blue-200 transition">Fitur</a>
+                <a href="#dashboard" class="hover:text-blue-200 transition">Dashboard</a>
+                <a href="katalog.html" class="hover:text-blue-200 transition">Katalog</a>
+                <a href="login.html" class="bg-white text-blue-600 px-4 py-2 rounded hover:bg-gray-100 transition">Login</a>
             </nav>
             <!-- Mobile menu toggle -->
             <button id="mobileMenuBtn" class="md:hidden text-white">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
-            <!-- Mobile menu -->
+        <!-- Mobile menu -->
         <div id="mobileMenu" class="hidden md:hidden bg-blue-700 px-4 py-2">
             <a href="#home" class="block py-2 hover:text-blue-200">Beranda</a>
             <a href="#features" class="block py-2 hover:text-blue-200">Fitur</a>
@@ -57,20 +42,19 @@
             <a href="login.html" class="block py-2 bg-white text-blue-600 px-4 py-2 rounded mt-2 inline-block">Login</a>
         </div>
     </header>
- 
 
     <!-- Hero Section -->
-    <section id="home" class="bg-gradient-to-r from-blue-500 to-blue-700 text-white py-20 parallax">
+    <section id="home" class="bg-gradient-to-r from-blue-500 to-blue-700 text-white py-20">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl md:text-6xl font-bold mb-6 animate-pulse">Selamat Datang di Perpustakaan Digital SMK Negeri 3 Manado</h2>
+            <h2 class="text-4xl md:text-6xl font-bold mb-6">Selamat Datang di Perpustakaan Digital SMK Negeri 3 Manado</h2>
             <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
                 Akses ribuan buku digital dengan mudah! Sistem perpustakaan modern kami menyediakan katalog lengkap, peminjaman online, review buku, dan dashboard personal untuk siswa dan admin. Temukan pengetahuan tanpa batas di era digital.
             </p>
             <div class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="register.html" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition shadow-lg hover-scale">
+                <a href="register.html" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition shadow-lg">
                     <i class="fas fa-user-plus mr-2"></i>Daftar Sekarang
                 </a>
-                <a href="katalog.html" class="bg-blue-800 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-900 transition shadow-lg hover-scale">
+                <a href="katalog.html" class="bg-blue-800 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-900 transition shadow-lg">
                     <i class="fas fa-search mr-2"></i>Jelajahi Katalog
                 </a>
             </div>
@@ -82,32 +66,32 @@
         <div class="container mx-auto px-4">
             <h3 class="text-3xl font-bold text-center mb-12 text-blue-600">Fitur Utama Website Kami</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition hover-scale">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition">
                     <i class="fas fa-book-open text-4xl text-blue-600 mb-4"></i>
                     <h4 class="text-xl font-semibold mb-2">Katalog Buku Lengkap</h4>
                     <p>Cari, filter, dan jelajahi ribuan buku berdasarkan judul, penulis, kategori, atau status ketersediaan. Lihat detail buku dengan foto, deskripsi, dan rating.</p>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition hover-scale">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition">
                     <i class="fas fa-handshake text-4xl text-blue-600 mb-4"></i>
                     <h4 class="text-xl font-semibold mb-2">Peminjaman & Pengembalian Online</h4>
                     <p>Request pinjam buku dengan mudah. Admin akan konfirmasi, dan sistem otomatis update stok serta kirim pengingat tenggat via email.</p>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition hover-scale">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition">
                     <i class="fas fa-star text-4xl text-blue-600 mb-4"></i>
                     <h4 class="text-xl font-semibold mb-2">Review & Rating Buku</h4>
                     <p>Beri rating 1-5 bintang dan ulasan untuk buku yang telah Anda pinjam. Lihat rata-rata rating dan ulasan dari pengguna lain.</p>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition hover-scale">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition">
                     <i class="fas fa-bell text-4xl text-blue-600 mb-4"></i>
                     <h4 class="text-xl font-semibold mb-2">Notifikasi Otomatis</h4>
                     <p>Dapatkan email pengingat 3 hari sebelum tenggat, notifikasi saat lewat tempo, dan info buku baru jika Anda subscribe.</p>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition hover-scale">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition">
                     <i class="fas fa-chart-bar text-4xl text-blue-600 mb-4"></i>
                     <h4 class="text-xl font-semibold mb-2">Statistik & Backup</h4>
                     <p>Lihat chart buku terpopuler dan peminjaman bulanan. Sistem otomatis backup data untuk keamanan.</p>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition hover-scale">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition">
                     <i class="fas fa-shield-alt text-4xl text-blue-600 mb-4"></i>
                     <h4 class="text-xl font-semibold mb-2">Keamanan & Aksesibilitas</h4>
                     <p>Role-based access (admin/member), sanitasi input, dan UI responsif untuk semua perangkat. Aman dari XSS dan unauthorized access.</p>
@@ -122,7 +106,7 @@
             <h3 class="text-3xl font-bold text-center mb-12 text-blue-600">Pelajari Dashboard Kami</h3>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <!-- Dashboard Member -->
-                <div class="bg-white p-8 rounded-lg shadow-lg hover-scale">
+                <div class="bg-white p-8 rounded-lg shadow-lg">
                     <h4 class="text-2xl font-semibold mb-4 text-blue-600 flex items-center">
                         <i class="fas fa-user-graduate mr-2"></i>Dashboard Anggota (Siswa)
                     </h4>
@@ -137,7 +121,7 @@
                     <a href="login.html" class="mt-4 inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">Masuk sebagai Anggota</a>
                 </div>
                 <!-- Dashboard Admin -->
-                <div class="bg-white p-8 rounded-lg shadow-lg hover-scale">
+                <div class="bg-white p-8 rounded-lg shadow-lg">
                     <h4 class="text-2xl font-semibold mb-4 text-blue-600 flex items-center">
                         <i class="fas fa-cogs mr-2"></i>Dashboard Admin
                     </h4>
@@ -158,7 +142,7 @@
         </div>
     </section>
 
-    <!-- Katalog Singkat Section -->
+    <!-- Katalog Singkat Section (dari sebelumnya, tapi diperbaiki) -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <h3 class="text-3xl font-bold text-center mb-12 text-blue-600">Jelajahi Katalog Buku</h3>
@@ -189,63 +173,33 @@
         </div>
     </section>
 
-    <!-- Section Baru: Tentang Kami & Developer (Versi Lebih Menarik dan Modern, Fokus Teks) -->
-<section id="about" class="py-20 gradient-bg relative overflow-hidden">
-    <!-- Background Pattern untuk Kesan Modern dan Tekstur -->
-    <div class="absolute inset-0 bg-gradient-to-br from-blue-400 via-white to-blue-600 opacity-20 animate-pulse"></div>
-    <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%230ea5e9" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="4"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E'); opacity: 0.5;"></div>
-    
-    <div class="container mx-auto px-4 relative z-10">
-        <h3 class="text-4xl md:text-5xl font-bold text-center mb-16 text-blue-600 animate-pulse drop-shadow-lg">Tentang Kami & Developer</h3>
-        
-        <!-- Quote Inspiratif dengan Efek Glow -->
-        <div class="text-center mb-12">
-            <blockquote class="text-2xl md:text-3xl italic text-gray-700 bg-white bg-opacity-90 backdrop-blur-lg p-8 rounded-2xl shadow-2xl inline-block border-l-4 border-blue-600 hover:shadow-3xl transition-all duration-500">
-                "Pengetahuan adalah kekuatan, dan perpustakaan digital adalah pintu gerbangnya."
-            </blockquote>
-        </div>
-        
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <!-- Info Developer dan Keterangan -->
-            <div class="bg-white bg-opacity-95 backdrop-blur-xl p-10 rounded-3xl shadow-2xl hover:shadow-3xl transform hover:scale-105 hover:rotate-1 transition-all duration-700 border border-blue-200">
-                <div class="flex items-center mb-6">
-                    <i class="fas fa-code text-5xl text-blue-600 mr-4 animate-bounce drop-shadow"></i>
-                    <h4 class="text-3xl font-bold text-blue-600 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">Siapa yang Membuat Aplikasi Ini?</h4>
-                </div>
-                <p class="text-lg mb-6 text-gray-800 leading-relaxed">
-                    Aplikasi ini dibuat oleh <strong class="text-blue-600 underline decoration-wavy">Ahmad Rahman, Kelas XII RPL, SMK Negeri 3 Manado</strong> (atau Tim Developer SMK Negeri 3 Manado dengan bantuan AI Assistant untuk demonstrasi). Kami adalah siswa dan staf SMK yang passionate tentang teknologi dan pendidikan. Tujuan kami adalah menciptakan solusi digital yang memudahkan akses pengetahuan bagi komunitas sekolah.
-                </p>
-                <h5 class="text-2xl font-semibold mb-4 text-blue-600 flex items-center">
-                    <i class="fas fa-info-circle mr-2"></i>Keterangan Tambahan:
-                </h5>
-                <ul class="list-disc list-inside mb-8 space-y-3 text-gray-700">
-                    <li><strong>Misi Perpustakaan:</strong> Mendorong literasi digital dan akses buku tanpa batas untuk siswa SMK, dengan fokus pada inovasi dan keamanan.</li>
-                    <li><strong>Teknologi yang Digunakan:</strong> Frontend dengan HTML5, CSS3 (Tailwind CSS), JavaScript ES6+, dan Chart.js. Backend menggunakan Firebase (Auth, Firestore, Functions) untuk real-time data dan email notifikasi via SendGrid.</li>
-                    <li><strong>Keunggulan:</strong> UI modern responsif, role-based access, sanitasi XSS, dan backup otomatis. Dirancang untuk skalabilitas dan kemudahan penggunaan.</li>
-                    <li><strong>Kontak:</strong> Jika ada pertanyaan, hubungi admin@smkn3manado.edu atau Ahmad Rahman.</li>
-                </ul>
-                <!-- Statistik Singkat dengan Cards Modern -->
-                <div class="grid grid-cols-3 gap-4 mb-6">
-                    <div class="text-center bg-gradient-to-br from-blue-100 to-blue-200 p-6 rounded-2xl shadow-lg hover:shadow-xl transition hover:scale-110">
-                        <h6 class="text-3xl font-bold text-blue-600">1000+</h6>
-                        <p class="text-sm font-medium">Buku Tersedia</p>
-                    </div>
-                    <div class="text-center bg-gradient-to-br from-blue-100 to-blue-200 p-6 rounded-2xl shadow-lg hover:shadow-xl transition hover:scale-110">
-                        <h6 class="text-3xl font-bold text-blue-600">500+</h6>
-                        <p class="text-sm font-medium">Anggota Aktif</p>
-                    </div>
-                    <div class="text-center bg-gradient-to-br from-blue-100 to-blue-200 p-6 rounded-2xl shadow-lg hover:shadow-xl transition hover:scale-110">
-                        <h6 class="text-3xl font-bold text-blue-600">24/7</h6>
-                        <p class="text-sm font-medium">Akses Online</p>
-                    </div>
-                </div>
-                <p class="text-sm text-gray-600 italic text-center bg-blue-50 p-4 rounded-lg">Dibuat dengan ❤️ untuk mendukung pendidikan di SMK Negeri 3 Manado.</p>
-                <div class="text-center mt-6">
-                    <a href="mailto:gabrieljohansenthomas@gmail.com" class="bg-gradient-to-r from-blue-600 to-blue-800 text-white px-10 py-4 rounded-full font-semibold hover:from-blue-700 hover:to-blue-900 transition shadow-lg hover:shadow-2xl transform hover:scale-105">Hubungi Kami Sekarang</a>
-                </div>
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white text-center py-8 mt-8">
+        <div class="container mx-auto px-4">
+            <p class="mb-4">&copy; 2023 SMK Negeri 3 Manado. Dibuat dengan ❤️ menggunakan Firebase dan Tailwind CSS.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="hover:text-blue-200"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-blue-200"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-blue-200"><i class="fab fa-instagram"></i></a>
             </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="assets/js/firebase-config.js"></script>
+    <script type="module" src="assets/js/auth.js"></script>
+    <script type="module" src="assets/js/catalog.js"></script>
+    <script type="module" src="assets/js/utils.js"></script>
+    <!-- Script untuk mobile menu -->
+    <script>
+        document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
             
-            <!-- Placeholder untuk Visual Teks-Based (Ikon dan Cards) -->
+            <!-- Placeholder untuk Visual Teks-Based (Ikon dan Cards) 
             <div class="space-y-8">
                 <div class="bg-white bg-opacity-95 backdrop-blur-xl p-8 rounded-3xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-700 border border-blue-200 text-center">
                     <i class="fas fa-users text-6xl text-blue-600 mb-4 animate-pulse"></i>
@@ -265,4 +219,4 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
